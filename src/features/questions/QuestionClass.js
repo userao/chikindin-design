@@ -33,6 +33,10 @@ export class QuestionWithChoice extends Question {
         super(id, title, additionalInfo);
         this.answerVariants = answerVariants;
     }
+
+    getAnswerVariants() {
+        return this.answerVariants;
+    }
 }
 
 export class QuestionRadio extends QuestionWithChoice {

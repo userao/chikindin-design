@@ -3,11 +3,11 @@ import Question from "./Question";
 
 const QuestionList = ({ questions }) => {
   return (
-    <>
-      {questions.map((q) => (
-        <Question key={q.getId()} />
+    <form class="question-list">
+      {questions.map((question) => (
+        <Question key={question.getId()} question={question} />
       ))}
-    </>
+    </form>
   );
 };
 

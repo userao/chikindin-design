@@ -6,7 +6,7 @@ import './App.css';
 function App() {
 
     return (
-        <div>
+        <div class="question-list__container">
            <QuestionList questions={questionList} />
         </div>
     );
