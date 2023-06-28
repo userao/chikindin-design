@@ -1,21 +1,20 @@
 import React from "react";
-import CheckboxTypeQuestion from "./CheckboxTypeQuestion";
-import RadioTypeQuestion from "./RadioTypeQuestion";
+import AnswerVariantsTypeQuestion from "./AnswerVariantsTypeQuestion";
 import InputTypeQuestion from "./InputTypeQuestion";
 
 const Question = ({ question }) => {
     const getQuestionElementsByType = (type) => {
         const mapping = {
             input: () => <InputTypeQuestion question={question} />,
-            radio: () => <RadioTypeQuestion question={question} />,
-            checkbox: () => <CheckboxTypeQuestion question={question} />,
+            radio: () => <AnswerVariantsTypeQuestion question={question} />,
+            checkbox: () => <AnswerVariantsTypeQuestion question={question} />,
         }
 
         return mapping[type];
     }
 
     
-    const QuestionElement = getQuestionElementsByType(question.getType());
+    const QuestionElement = getQuestionElementsByType(question.type);
     
     return (
         <>

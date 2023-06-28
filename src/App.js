@@ -1,13 +1,13 @@
 import React from 'react';
 import QuestionList from './components/QuestionList';
-import questionList from './features/questions/questionsList';
+import { questions } from './app/store';
 import './App.css';
 
 function App() {
 
     return (
-        <div class="question-list__container">
-           <QuestionList questions={questionList} />
+        <div className="question-list__container">
+           <QuestionList questions={questions} />
         </div>
     );
 }

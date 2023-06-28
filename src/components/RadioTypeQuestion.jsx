@@ -3,15 +3,26 @@ import React from "react";
 const CheckboxTypeQuestion = ({ question }) => {
   const answerVariants = question.getAnswerVariants();
 
+  function handleChange(variantId) {
+    // ф-я вызывает метод класса Question toggleAnswerVariantCheck() и тоглит ответ с переданным id
+}
+
   return (
-    <div class="question">
+    <div className="question">
       <p className="question__title">{question.getTitle()}</p>
-      {answerVariants.map((answer) => {
+      {answerVariants.map((answerVariant) => {
+        const answerVariantId = answerVariant.getId();
+
         return (
-          <div className="question__input-container">
-            <input id={`${question.getId()}-${answer.getId()}`} type="radio" />
-            <label htmlFor={`${question.getId()}-${answer.getId()}`}>
-              {answer.getDescription()}
+          <div className="question__input-container" key={answerVariantId}>
+            <input
+              id={`${question.getId()}-${answerVariantId}`}
+              type="radio"
+              checked={answerVariant.isChecked()}
+              onChange={() => handleChange(answerVariantId)}
+            />
+            <label htmlFor={`${question.getId()}-${answerVariantId}`}>
+              {answerVariant.getDescription()}
             </label>
           </div>
         );

@@ -3,9 +3,9 @@ import Question from "./Question";
 
 const QuestionList = ({ questions }) => {
   return (
-    <form class="question-list">
+    <form className="question-list">
       {questions.map((question) => (
-        <Question key={question.getId()} question={question} />
+        <Question key={question.id} question={question} />
       ))}
     </form>
   );

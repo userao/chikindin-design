@@ -1,8 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import questionsReducer from '../features/questions/questionsSlice';
+import answersReducer from '../features/answers/answersSlice';
+import { questionsSelectors } from '../features/questions/questionsSlice';
+import { answersSelectors } from '../features/answers/answersSlice';
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+    reducer: {
+        questions: questionsReducer,
+        answers: answersReducer,
+    },
 });
+
+export const answers = answersSelectors.selectAll(store.getState());
+export const questions = questionsSelectors.selectAll(store.getState());
