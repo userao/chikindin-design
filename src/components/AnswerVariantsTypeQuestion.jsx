@@ -1,29 +1,43 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { answers } from "../app/store";
+import { useDispatch, useSelector } from "react-redux";
+import { answersSelectors } from "../features/answers/answersSlice";
 import { toggleCheck } from "../features/answers/answersSlice";
+import { setAnswers } from "../features/questions/questionsSlice";
 
 const AnswerVariantsTypeQuestion = ({ question }) => {
   const questionId = question.id;
+  const answers = useSelector(answersSelectors.selectAll);
   const questionAnswers = answers.filter((answer) => answer.questionId === questionId);
   const dispatch = useDispatch();
 
-  function handleChange(aId, qType) {
-    // const newAnswers = questionAnswers.map((answer) => {
-    //     if (qType === 'radio') {
-    //         if (aId === answer.id) {
-    //             answer.checked = true;
-    //         } else {
-    //             answer.checked = false;
-    //         }
-    //     } else {
-    //         if (aId === answer.id) {
-    //             answer.checked = !answer.checked;
-    //         }
-    //     }
-    // });
-
-    dispatch(toggleCheck());
+  function handleChange(aId, isChecked, qType, qId) {
+    const updateObjects = questionAnswers.reduce((acc, answer) => {
+        const updateObject = {
+            id: answer.id,
+            changes: {}
+        };
+        if (qType === 'checkbox' && answer.id === aId) {
+            updateObject.changes = {
+                checked: !isChecked,
+            }
+            return [...acc, updateObject];
+        } else if (qType === 'radio'){
+            if (answer.id !== aId) {
+                updateObject.changes = {
+                    checked: false,
+                }
+            } else {
+                updateObject.changes = {
+                    checked: true,
+                }
+            }
+            return [...acc, updateObject];
+        } else {
+            return acc;
+        }
+    }, []);
+    dispatch(toggleCheck( { updateObjects } ));
+    // dispatch(setAnswers({ qId }));
   }
 
   return (
@@ -39,7 +53,7 @@ const AnswerVariantsTypeQuestion = ({ question }) => {
               id={`${questionId}-${answerId}`}
               type={question.type}
               checked={isChecked}
-              onChange={() => handleChange(answerId, question.type)}
+              onChange={() => handleChange(answerId, isChecked, question.type, question.id)}
             />
             <label htmlFor={`${questionId}-${answerId}`}>{answerTitle}</label>
           </div>

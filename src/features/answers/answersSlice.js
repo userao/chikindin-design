@@ -42,8 +42,9 @@ const answersSlice = createSlice({
     name: 'answers',
     initialState,
     reducers: {
-        toggleCheck(state, { payload }) {
-           console.log(payload)
+        toggleCheck: (state, { payload }) => {
+            const { updateObjects } = payload;
+            answersAdapter.updateMany(state, updateObjects)
         }
     }
 });

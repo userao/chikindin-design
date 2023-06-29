@@ -1,4 +1,6 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+import { answersSelectors } from '../answers/answersSlice';
+import { store } from '../../app/store';
 
 const questionsAdapter = createEntityAdapter();
 
@@ -45,14 +47,17 @@ const questionsSlice = createSlice({
             const updateObject = {
                 id,
                 changes: {
-                    answer
+                    answers: [answer]
                 },
             }
             questionsAdapter.updateOne(state, updateObject);
+        },
+        setAnswers: (state, { payload }) => {
+
         },
     }
 });
 
 export const questionsSelectors = questionsAdapter.getSelectors((state) => state.questions)
-export const { setAnswer } = questionsSlice.actions;
+export const { setAnswer, setAnswers } = questionsSlice.actions;
 export default questionsSlice.reducer;
