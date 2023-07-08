@@ -1,13 +1,8 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { setAnswer } from "../features/questions/questionsSlice";
+import { Field, useFormikContext } from "formik";
 
 const InputTypeQuestion = ({ question }) => {
-    const dispatch = useDispatch();
-
-  function handleChange(e) {
-    dispatch(setAnswer({id: question.id, answer: e.target.value}))
-  }
+  const currentValue = useFormikContext().values[question.title];
 
   return (
     <div className="question">
@@ -17,7 +12,12 @@ const InputTypeQuestion = ({ question }) => {
           <p className="question__additive-info">{question.additiveInfo}</p>
         )}
         <div className="question__input-container">
-          <input type="text" onChange={handleChange} />
+          <Field
+            id={`question-${question.id}`}
+            name={question.title}
+            type="text"
+            value={currentValue}
+          />
         </div>
       </label>
     </div>
