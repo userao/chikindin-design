@@ -5,7 +5,7 @@ const CheckboxTypeQuestion = ({ question }) => {
 
   function handleChange(variantId) {
     // ф-я вызывает метод класса Question toggleAnswerVariantCheck() и тоглит ответ с переданным id
-}
+  }
 
   return (
     <div className="question">

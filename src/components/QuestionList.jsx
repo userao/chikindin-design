@@ -1,11 +1,12 @@
 import React from "react";
+import { Formik, Form } from "formik";
 import Question from "./Question";
-import { Formik, Field, Form } from "formik";
 
 const QuestionList = ({ questions }) => {
-  const formInitialValues = questions.reduce((acc, q) => {
-    return { ...acc, [q.title]: "" };
-  }, {});
+//   const formInitialValues = questions.reduce((acc, q) => {
+//     return { ...acc, [q.title]: "" };
+//   }, {});
+  const formInitialValues = {};
 
   function handleSubmit(values) {
     console.log(values);

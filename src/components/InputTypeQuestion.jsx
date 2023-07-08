@@ -2,7 +2,14 @@ import React from "react";
 import { Field, useFormikContext } from "formik";
 
 const InputTypeQuestion = ({ question }) => {
-  const currentValue = useFormikContext().values[question.title];
+  const { values, setFieldValue } = useFormikContext();
+  const initialValue = values[question.title] ?? '';
+  const [inputValue, setInputValue] = React.useState(initialValue);
+
+  function handleChange(e) {
+    setInputValue(e.target.value);
+    setFieldValue(question.title, e.target.value);
+  }
 
   return (
     <div className="question">
@@ -16,7 +23,8 @@ const InputTypeQuestion = ({ question }) => {
             id={`question-${question.id}`}
             name={question.title}
             type="text"
-            value={currentValue}
+            onChange={handleChange}
+            value={inputValue}
           />
         </div>
       </label>
