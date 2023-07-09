@@ -1,11 +1,9 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import Question from "./Question";
+import questionFormValidationSchema from "../utils/questionFormValidationSchema";
 
 const QuestionList = ({ questions }) => {
-//   const formInitialValues = questions.reduce((acc, q) => {
-//     return { ...acc, [q.title]: "" };
-//   }, {});
   const formInitialValues = {};
 
   function handleSubmit(values) {
@@ -13,7 +11,12 @@ const QuestionList = ({ questions }) => {
   }
 
   return (
-    <Formik initialValues={formInitialValues} onSubmit={(values) => handleSubmit(values)}>
+    <Formik
+      initialValues={formInitialValues}
+      onSubmit={(values) => handleSubmit(values)}
+      validationSchema={questionFormValidationSchema}
+      validateOnChange={false}
+      validateOnBlur={false}>
       <Form className="question-list">
         {questions.map((question) => (
           <Question key={question.id} question={question} />

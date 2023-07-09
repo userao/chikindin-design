@@ -3,23 +3,15 @@ import AnswerVariantsTypeQuestion from "./AnswerVariantsTypeQuestion";
 import InputTypeQuestion from "./InputTypeQuestion";
 
 const Question = ({ question }) => {
-  const getQuestionElementsByType = (type) => {
-    const mapping = {
-      input: () => <InputTypeQuestion question={question} />,
-      radio: () => <AnswerVariantsTypeQuestion question={question} />,
-      checkbox: () => <AnswerVariantsTypeQuestion question={question} />,
-    };
-
-    return mapping[type];
-  };
-
-  const QuestionElement = getQuestionElementsByType(question.type);
-
-  return (
-    <>
-      <QuestionElement />
-    </>
-  );
+  switch(question.type) {
+    case 'input':
+      return <InputTypeQuestion question={question} />;
+    case 'checkbox':
+    case 'radio':
+      return <AnswerVariantsTypeQuestion question={question} />;
+    default:
+      throw new Error(`Unknown question type: ${question.type} at question id ${question.id}`);
+  }
 };
 
 export default Question;
