@@ -3,8 +3,12 @@ import questionsReducer from '../features/questions/questionsSlice';
 import answersReducer from '../features/answers/answersSlice';
 
 export const store = configureStore({
-    reducer: {
-        questions: questionsReducer,
-        answers: answersReducer,
-    },
+  reducer: {
+    questions: questionsReducer,
+    answers: answersReducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });

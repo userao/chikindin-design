@@ -6,19 +6,19 @@ const questions = [
     type: 'input',
     title: 'Ваше имя',
     additiveInfo: 'Дополнительная информация',
-    schema: JSON.stringify(Yup.string()
+    schema: Yup.string()
       .min(2, 'Должно содержать от 2 до 15 символов')
       .max(15, 'Должно содержать от 2 до 15 символов')
-      .required('Пожалуйста, заполните все обязательные поля')),
+      .required('Пожалуйста, заполните все обязательные поля'),
   },
   {
     id: 1,
     type: 'input',
     title: 'Ваш e-mail',
     additiveInfo: null,
-    schema: JSON.stringify(Yup.string()
+    schema: Yup.string()
       .email('Пожалуйста, укажите корректный e-mail')
-      .required('Пожалуйста, заполните все обязательные поля')),
+      .required('Пожалуйста, заполните все обязательные поля'),
   },
   {
     id: 2,
