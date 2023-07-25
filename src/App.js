@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
+
 import questionsToSet from './features/questions/questionList';
 import answersToSet from './features/answers/answerList';
-import QuestionList from './components/QuestionList';
-import './App.css';
-import { questionsSelectors, setQuestions } from './features/questions/questionsSlice';
+import { setQuestions } from './features/questions/questionsSlice';
 import { setAnswers } from './features/answers/answersSlice';
+
+import Main from './pages/Main';
+import Questionary from './pages/Questionary';
+import AboutUs from './pages/AboutUs';
+import Navbar from './components/Navbar';
+
+import './App.css';
 
 function App() {
   const dispatch = useDispatch();
-  const questions = useSelector(questionsSelectors.selectAll);
 
   useEffect(() => {
     dispatch(setQuestions(questionsToSet));
@@ -18,13 +24,12 @@ function App() {
 
   return (
     <>
-      {
-        questions.length &&
-        <div className="question-list__container">
-          <QuestionList questions={questions} />
-        </div>
-
-      }
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/questionary' element={<Questionary />} />
+        <Route path='/about-us' element={<AboutUs />} />
+      </Routes>
     </>
   );
 }
