@@ -7,7 +7,7 @@ import answersToSet from './features/answers/answerList';
 import { setQuestions } from './features/questions/questionsSlice';
 import { setAnswers } from './features/answers/answersSlice';
 
-import Main from './pages/Main';
+import Home from './pages/Home';
 import Questionary from './pages/Questionary';
 import AboutUs from './pages/AboutUs';
 import Navbar from './components/Navbar';
@@ -26,7 +26,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Main />} />
+        <Route path='/' element={<Home />} />
         <Route path='/questionary' element={<Questionary />} />
         <Route path='/about-us' element={<AboutUs />} />
       </Routes>

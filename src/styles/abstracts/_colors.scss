@@ -1,0 +1,39 @@
+$-clr-blue-light: hsl(231, 100%, 85%);
+$-clr-blue: hsl(230, 100%, 50%);
+$-clr-blue-dark: hsl(230, 100%, 25%);
+
+$-clr-white: hsl(0, 0%, 100%);
+$-clr-gray-light: hsl(0, 0%, 85%);
+$-clr-gray-medium: hsl(0, 0%, 50%);
+$-clr-gray-dark: hsl(0, 0%, 25%);
+
+$default-theme: (
+  "neutral": (
+    "000": $-clr-white,
+    "100": $-clr-gray-light,
+    "400": $-clr-gray-medium,
+    "700": $-clr-gray-dark,
+  ),
+  "brand-primary": (
+    "100": $-clr-blue-light,
+    "400": $-clr-blue,
+    "700": $-clr-blue-dark,
+  )
+);
+
+$clr-neutral-000: var(--neutral-000);
+$clr-neutral-100: var(--neutral-100);
+$clr-neutral-400: var(--neutral-400);
+$clr-neutral-700: var(--neutral-700);
+
+$clr-brand-primary-100: var(--brand-primary-100);
+$clr-brand-primary-400: var(--brand-primary-400);
+$clr-brand-primary-700: var(--brand-primary-700);
+
+:root {
+  @each $color, $shades in $default-theme {
+    @each $shade, $value in $shades {
+      --#{$color}-#{$shade}: #{$value};
+    }
+  }
+}

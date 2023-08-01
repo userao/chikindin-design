@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+//color classes
+@each $color, $shades in $active-theme {
+  @each $shade, $value in $shades {
+    .bg-#{$color}-#{$shade} {
+      background-color: #{$value};
+    }
+    .text-#{$color}-#{$shade} {
+      color: #{$value};
+    }
+  }
+}

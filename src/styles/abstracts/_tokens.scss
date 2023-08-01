@@ -1,0 +1,16 @@
+@use "colors" as *;
+@use "typography" as *;
+
+$active-theme: $default-theme;
+$default-font-weight: $fw-600;
+
+// navigation
+$navigation-background-color: $clr-neutral-100;
+$navigation-text-color: $clr-neutral-700;
+$navigation-font-size: $fs-400;
+$navigation-font-weight: $fw-600;
+$navigation-links-spacing: 2.5rem;
+$navigation-links-vertical-spacing: 1.5rem;
+
+//body
+$body-font-family: $font-family-base;

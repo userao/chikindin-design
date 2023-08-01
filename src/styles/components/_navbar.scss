@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+.nav {
+  background-color: $navigation-background-color;
+  text-align: center;
+  text-transform: uppercase;
+
+  .nav__brand-logo {
+    position: absolute;
+    left: 1.5rem;
+    top: 0.625rem;
+  }
+
+  .nav__links-list-container {
+    list-style: none;
+  }
+
+    .nav__link-container {
+      display: inline-block;
+      padding-inline: calc($navigation-links-spacing / 2);
+      padding-block: $navigation-links-vertical-spacing;
+    }
+
+    .nav__link {
+      text-decoration: none;
+      color: $navigation-text-color;
+      font-size: $navigation-font-size;
+      font-weight: $navigation-font-weight;
+    }
+}

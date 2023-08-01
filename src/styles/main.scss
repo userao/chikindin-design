@@ -1,0 +1,13 @@
+@use 'components' as *;
+@use 'utils' as *;
+@use 'abstracts' as *;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  font-weight: $default-font-weight;
+}

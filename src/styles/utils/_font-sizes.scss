@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+
+@each $screen-size, $font-sizes in $font-sizes {
+  @if $screen-size == small {
+    @each $font-size, $value in $font-sizes {
+      .fs-#{$font-size} {
+        font-size: #{$value};
+      }
+    }
+  }
+
+  @if $screen-size == medium {
+    @include mq(small) {
+      @each $font-size, $value in $font-sizes {
+        .fs-#{$font-size} {
+          font-size: #{$value};
+        }
+      }
+    }
+  }
+
+  @if $screen-size == large {
+    @include mq(medium) {
+      @each $font-size, $value in $font-sizes {
+        .fs-#{$font-size} {
+          font-size: #{$value};
+        }
+      }
+    }
+  }
+}
