@@ -1,0 +1,5 @@
+@for $width from 1 to 100 {
+  .w-#{$width} {
+    width: #{$width}vw;
+  }
+}

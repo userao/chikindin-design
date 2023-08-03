@@ -1,0 +1,15 @@
+.about-us {
+  line-height: 2rem;
+
+  .about-us__header {
+    text-transform: uppercase;
+  }
+
+  .submit-application-button {
+    border: 3px solid var(--brand-primary-400);
+    font-family: inherit;
+    color: var(--neutral-400);
+    border-radius: 4px;
+    background: none;
+  }
+}

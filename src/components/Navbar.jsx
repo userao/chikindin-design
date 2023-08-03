@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// todo
+// реализовать переключение страниц
 const Navbar = () => {
   return (
     <nav className="nav">
       <div>
-        <img className="nav__brand-logo" src="svg/logo.svg" alt="logo" />
+        <a href="/">
+          <img className="nav__brand-logo" src="svg/brand_logo.svg" alt="brand logo" />
+        </a>
       </div>
       <ul className="nav__links-list-container">
         <li className="nav__link-container">

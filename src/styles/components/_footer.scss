@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+.footer {
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+
+  .footer__info-container {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: $footer-horizontal-spacing;
+    padding-block: $footer-vertical-spacing;
+
+    .footer__contacts {
+      line-height: $footer-line-height;
+    }
+
+    .footer__social-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+  }
+}

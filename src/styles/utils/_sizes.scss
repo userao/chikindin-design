@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+@each $size, $value in $sizes {
+  @each $spacing-class, $spacing-types in $spacing-classes {
+    @each $spacing-type, $shortening in $spacing-types {
+      .#{$shortening}-#{$size} {
+        #{$spacing-class}#{$spacing-type}: #{$value};
+      }
+    }
+  }
+}
+
+.mx-auto {
+  margin-inline: auto;
+}

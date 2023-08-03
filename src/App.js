@@ -11,8 +11,11 @@ import Home from './pages/Home';
 import Questionary from './pages/Questionary';
 import AboutUs from './pages/AboutUs';
 import Navbar from './components/Navbar';
-
-import './App.css';
+import Footer from './components/Footer';
+import OurWork from './pages/OurWork';
+import Services from './pages/Services';
+import Contacts from './pages/Contacts';
+import BrandSpinner from './components/BrandSpinner';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,7 +32,11 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/questionary' element={<Questionary />} />
         <Route path='/about-us' element={<AboutUs />} />
+        <Route path='/our-work' element={<OurWork />} />
+        <Route path='/services' element={<Services />} />
+        <Route path='/contacts' element={<Contacts />} />
       </Routes>
+      <Footer />
     </>
   );
 }

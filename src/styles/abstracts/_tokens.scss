@@ -4,6 +4,9 @@
 $active-theme: $default-theme;
 $default-font-weight: $fw-600;
 
+// body
+$body-font-family: $font-family-base;
+
 // navigation
 $navigation-background-color: $clr-neutral-100;
 $navigation-text-color: $clr-neutral-700;
@@ -12,5 +15,11 @@ $navigation-font-weight: $fw-600;
 $navigation-links-spacing: 2.5rem;
 $navigation-links-vertical-spacing: 1.5rem;
 
-//body
-$body-font-family: $font-family-base;
+// footer
+$footer-background-color: $clr-neutral-100;
+$footer-text-color: $clr-neutral-700;
+$footer-font-size: $fs-400;
+$footer-font-weight: $fw-600;
+$footer-line-height: 1.5rem;
+$footer-horizontal-spacing: 1.5rem;
+$footer-vertical-spacing: 1.5rem;
