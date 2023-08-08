@@ -25,7 +25,15 @@ const AboutUs = () => {
         cupiditate fugiat, incidunt doloribus temporibus modi ex. Quisquam consequatur ad repellat
         fugit voluptas qui!
       </p>
-      <button class="submit-application-button w-30 p-200 fs-400">оставьте заявку на просчет стоймости проекта</button>
+      <div className="submit-application__container">
+        <img className="arrow bottom-left" src="svg/arrow1.svg" alt="brand logo" />
+        <img className="arrow top-left" src="svg/arrow2.svg" alt="brand logo" />
+        <button className="submit-application-button p-200 fs-400">
+          оставьте заявку на просчет стоймости проекта
+        </button>
+        <img className="arrow top-right" src="svg/arrow3.svg" alt="brand logo" />
+        <img className="arrow bottom-right" src="svg/arrow4.svg" alt="brand logo" />
+      </div>
     </section>
   );
 };

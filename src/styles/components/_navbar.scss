@@ -1,6 +1,7 @@
 @use '../abstracts' as *;
 
 .nav {
+  height: $navigation-height;
   background-color: $navigation-background-color;
   text-align: center;
   text-transform: uppercase;
@@ -26,5 +27,9 @@
       color: $navigation-text-color;
       font-size: $navigation-font-size;
       font-weight: $navigation-font-weight;
+    }
+
+    .active {
+      color: $navigation-active-link-color;
     }
 }

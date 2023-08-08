@@ -8,14 +8,17 @@ $default-font-weight: $fw-600;
 $body-font-family: $font-family-base;
 
 // navigation
+$navigation-height: 4rem;
 $navigation-background-color: $clr-neutral-100;
 $navigation-text-color: $clr-neutral-700;
 $navigation-font-size: $fs-400;
 $navigation-font-weight: $fw-600;
 $navigation-links-spacing: 2.5rem;
 $navigation-links-vertical-spacing: 1.5rem;
+$navigation-active-link-color: $clr-brand-primary-400;
 
 // footer
+$footer-height: 6.25rem;
 $footer-background-color: $clr-neutral-100;
 $footer-text-color: $clr-neutral-700;
 $footer-font-size: $fs-400;
@@ -23,3 +26,6 @@ $footer-font-weight: $fw-600;
 $footer-line-height: 1.5rem;
 $footer-horizontal-spacing: 1.5rem;
 $footer-vertical-spacing: 1.5rem;
+
+// about us
+$submit-application-border-radius: 10px;
