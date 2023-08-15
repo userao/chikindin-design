@@ -1,21 +1,16 @@
-@use '../abstracts/' as *;
+@use "../abstracts/" as *;
 
-.container {
-  display: grid;
-  height: calc(100vh - $footer-height - $navigation-height);
-
-  .carousel {
-    overflow-x: auto;
-    white-space: nowrap;
-    display: flex;
-    gap: 0.5rem;
+.carousel {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  gap: 0.5rem;
   /*   scroll-snap-type: x proximity; */
   /*   scroll-behavior: smooth; */
-    overflow: hidden;
+  overflow: hidden;
 
-    .carousel-item {
-      text-align: center;
-      scroll-snap-align: center;
-    }
+  .carousel-item {
+    text-align: center;
+    scroll-snap-align: center;
   }
 }

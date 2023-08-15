@@ -1,0 +1,5 @@
+@use '../abstracts/' as *;
+
+.h-full {
+  height: calc(100vh - $footer-height - $navigation-height);
+}

@@ -2,6 +2,7 @@ import React from "react";
 
 // todo:
 // -разобраться с автоскроллом
+
 const Home = () => {
   class Image {
     constructor(path, id) {
@@ -16,13 +17,13 @@ const Home = () => {
   const pathsToImages = ["images/home/carousel_image_1.png", "images/home/carousel_image_2.png"];
 
   // function autoScroll(scrollContainer) {
-    // if (scrollContainer.scrollLeft % 480 === 0) {
-    //   scrollContainer.append(firstItem);
-    //   scrollContainer.scroll(scrollContainer.scrollLeft - 480, 0);
-    //   firstItem = document.querySelector('.carousel-item:first-child');
-    //   lastItem = document.querySelector('.carousel-item:last-child');
-    // }  
-    
+  // if (scrollContainer.scrollLeft % 480 === 0) {
+  //   scrollContainer.append(firstItem);
+  //   scrollContainer.scroll(scrollContainer.scrollLeft - 480, 0);
+  //   firstItem = document.querySelector('.carousel-item:first-child');
+  //   lastItem = document.querySelector('.carousel-item:last-child');
+  // }
+
   //   const promise = new Promise ((res, rej) => {
   //     setTimeout(() => {
   //       const scrollAmount = 1;
@@ -44,12 +45,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="h-full">
       <div className="carousel" ref={carouselRef}>
         {images.map((image) => {
           return (
             <div key={image.id} className="carousel-item">
-              <img src={image.path} alt="Interior" />
+              <img className="h-full" src={image.path} alt="Interior" />
             </div>
           );
         })}
